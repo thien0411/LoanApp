@@ -6,11 +6,13 @@ function computeTable() {
   var terms     = $("#terms").val();
 
 
-  if(principle < 0 || apr > 100 || apr < 0 || isNaN(principle) || isNaN(apr) || isNaN(terms) ){
+ if(principle < 0 || apr > 100 || apr < 0 || isNaN(principle) || isNaN(apr) || isNaN(terms) ){
 
-        addErrorBox("invalid input");
+        addErrorBox("You need to input Positive Numbers and 0 < Apr < 100");
   }
     else{
+
+      apr = apr*0.01;
           var monthlyPayment = getMonthlyPayment(principle, apr, terms);
 
 
