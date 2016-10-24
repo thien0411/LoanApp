@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Loan Amortization Schedule</title>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="loan.js"></script>
+  </head>
+  <body>
+
+  <div class="container">
+
+    <div class="jumbotron">
+    <h2>Loan Amortization Schedule</h2>
+        <div id="errorArea"></div>
+        <p>This page provides a payment schedule for a consumer loan.</p>
+
+        <div class="container">
+            <div class="row">
+                <div id="principleDiv" class="col-md-2" title="The amount initially borrowed.">Principle:</div>
+                <div class="col-md-3"><input type="text" id="principle" value=""/></div>
+            </div>
+            <div class="row">
+                <div id="aprDiv" class="col-md-2" title="Annual Percentage Rate">APR:</div>
+                <div class="col-md-2"><input type="text" id="apr" value=""/></div>
+            </div>
+            <div class="row">
+                <div id="termDiv" class="col-md-2" title="Number of months over which you pay the loan back.">Terms:</div>
+                <div class="col-md-2"><input type="text" id="terms" value=""/></div>
+            </div>
+            <div class="row">
+                <div id="monthlyPaymentDiv" class="col-md-2" title="Your resulting monthly payment, this value will be computed for you.">Monthly Payment:</div>
+                <div class="col-md-2"><input type="text" id="monthlyPayment" value="0.00" readonly/></div>
+            </div>
+            <button type="button" class="btn btn-lrg btn-primary" onclick="computeTable()">Compute</button>
+        </div>
+    </div><!-- end of jumbotron -->
+
+      <div class="container col-md-8">
+      <table class="table table-bordered table-striped table-hover" id="loanTable">
+        <thead>
+        <tr>
+            <th>Payment Number</th>
+            <th>Interest Payment</th>
+            <th>Principle Payment</th>
+            <th>New Balance</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      </div>
+  </div>
+
+  </body>
+</html>
